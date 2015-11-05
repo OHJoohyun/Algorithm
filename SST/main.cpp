@@ -41,6 +41,26 @@ int main()
 		tail++;
 	}
 
+	_VIRUS tmp;
+	int max_index;
+	max = 0;
+	for (i = 0; i < M; i++)
+	{
+		max = virus[i].power;
+		for (j = i; j < M; j++)
+		{
+			if (virus[j].power > max)
+			{
+				max_index = j;
+				max = virus[j].power;
+			}
+		}
+		tmp = virus[i];
+		virus[i] = virus[max_index];
+		virus[max_index] = tmp;
+	}
+
+
 	while (1)
 	{
 		if (head == tail) break;

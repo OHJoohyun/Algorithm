@@ -9,7 +9,7 @@ typedef struct {
 
 int N, M;
 
-int map[101][101];
+char map[102][102];
 int visited[101][101];
 _COORI point[10201];
 
@@ -30,19 +30,23 @@ void bfs(int row, int col)
 	tail++;
 
 	visited[row][col] = 1;
+	//map[row][col] = 0;
 
 	while (1)
 	{
 		if (head == tail) break;
+		//if (map[N][M] == 0) break;
 		for (i = 0; i < 4; i++)
 		{
 			row_t = point[head].row + Dy[i];
 			col_t = point[head].col + Dx[i];
 
-			if (row_t > 0 && row_t <= N && col_t > 0 && col_t <= M)
+			if (row_t >= 0 && row_t < N && col_t >= 0 && col_t < M)
 			{
-				if (map[row_t][col_t] == 1 && visited[row_t][col_t] == -1)
+				if (map[row_t][col_t] == '1' && visited[row_t][col_t] == -1)
 				{
+					//printf("???\n");
+					//map[row_t][col_t] = 0;
 					point[tail].row = row_t;
 					point[tail].col = col_t;
 					tail++;
@@ -58,45 +62,43 @@ void bfs(int row, int col)
 int main()
 {
 	int i, j, k;
-	int tmp[101];
+	//int tmp[101];
 	scanf("%d %d", &N, &M);
 
-
-	for (i = 1; i <= N; i++)
+	for (i = 0; i < N; i++)
 	{
-		scanf("%d", &tmp[i]);
-		for (j = M; j > 0; j--)
-		{
-			map[i][j] = tmp[i] % 10;
-			tmp[i] = tmp[i] / 10;
-		}
+		scanf("%s", map[i]);
 	}
 
 	/*
-	for (i = 1; i <= N; i++)
+	for (i = 0; i < N; i++)
 	{
-		for (j = 1; j <= M; j++)
+		for (j = 0; j < M; j++)
 		{
-			printf("%d ", map[i][j]);
+			printf("%c ", map[i][j]);
 		}
 		printf("\n");
 	}
 	*/
+	
 		
 	memset(visited, -1, sizeof(visited));
-	memset(point, -1, sizeof(point));
+	//memset(point, -1, sizeof(point));
 
-	bfs(1, 1);
+	bfs(0, 0);
+	
 	/*
-	for (i = 1; i <= N; i++)
+	for (i = 0; i < N; i++)
 	{
-		for (j = 1; j <= M; j++)
+		for (j = 0; j < M; j++)
 		{
 			printf("%d ", visited[i][j]);
 		}
 		printf("\n");
 	}
 	*/
+	
+	
 
-	printf("%d\n", visited[N][M]);
+	printf("%d\n", visited[N - 1][M - 1]);
 }
