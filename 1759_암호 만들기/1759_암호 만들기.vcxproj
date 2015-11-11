@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BD78013E-E34B-4168-B7D2-FD6419FF1FB4}</ProjectGuid>
+    <ProjectGuid>{54ECE62F-AB96-4EBB-A95C-1A38044BE5CC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SCPC_좋은수</RootNamespace>
+    <RootNamespace>My1759_암호만들기</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

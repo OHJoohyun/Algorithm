@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct
 {
@@ -14,6 +15,17 @@ _VIRUS virus[250000];
 int Dy[6] = { 1, -1 , 0, 0, 0, 0 };
 int Dx[6] = { 0, 0, 1, -1, 0, 0 };
 int Dz[6] = { 0, 0, 0, 0, 1, -1 };
+
+
+int compare(const void *arg1, const void * arg2) {
+	int v1, v2, v3, v4;
+	v1 = ((_VIRUS *)arg1)->power;
+	v2 = ((_VIRUS *)arg2)->power;
+
+	if (v1 > v2) return -1;
+	else if (v1 == v2) return 0;
+	else return 1;
+}
 
 int main()
 {
@@ -41,24 +53,7 @@ int main()
 		tail++;
 	}
 
-	_VIRUS tmp;
-	int max_index;
-	max = 0;
-	for (i = 0; i < M; i++)
-	{
-		max = virus[i].power;
-		for (j = i; j < M; j++)
-		{
-			if (virus[j].power > max)
-			{
-				max_index = j;
-				max = virus[j].power;
-			}
-		}
-		tmp = virus[i];
-		virus[i] = virus[max_index];
-		virus[max_index] = tmp;
-	}
+	qsort(virus, M, sizeof(_VIRUS), compare);
 
 
 	while (1)
