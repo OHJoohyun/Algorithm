@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="new.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
