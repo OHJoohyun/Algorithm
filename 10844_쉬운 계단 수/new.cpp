@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/10844
 
-// Dynamic Programming 
+// Dynamic Programming  
 
 #include <stdio.h>
 #include <string.h>
