@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7116C19B-8B82-402B-96F4-54E74196A7B5}</ProjectGuid>
+    <ProjectGuid>{DF7064F7-9581-4D81-8461-B6A07A9ACBC3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SST</RootNamespace>
+    <RootNamespace>My1504_특정한최단경로</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="오전1번.cpp" />
+    <ClCompile Include="new.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
