@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{65128F9E-45A7-4F66-9C09-0E6F28D048B2}</ProjectGuid>
+    <ProjectGuid>{669998B0-3CFF-47FA-B9F7-0B167D17079D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My2512_예산</RootNamespace>
+    <RootNamespace>My10836_여왕벌</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="anwser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{65128F9E-45A7-4F66-9C09-0E6F28D048B2}</ProjectGuid>
+    <ProjectGuid>{6F927ACD-D51F-49DC-8F5A-24CD8873D447}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My2512_예산</RootNamespace>
+    <RootNamespace>My2805_나무자르기</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
