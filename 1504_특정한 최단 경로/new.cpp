@@ -9,6 +9,7 @@ int N, E;
 int fisrt, second;
 int min = 999999;
 int head = 0, tail = 0;
+int find = 0;
 
 int main()
 {
@@ -25,7 +26,7 @@ int main()
 
 	scanf("%d %d", &fisrt, &second);
 
-	/*
+	
 	for (i = 1; i <= N; i++)
 	{
 	for (j = 1; j <= N; j++)
@@ -34,7 +35,7 @@ int main()
 	}
 	printf("\n");
 	}
-	*/
+	
 
 	memset(check, 0x1f, sizeof(check));
 
@@ -65,6 +66,7 @@ int main()
 					queue[tail] = i;
 					tail++;
 				}
+
 				if (check[i] > check[queue[head]] + path[queue[head]][i])
 					check[i] = check[queue[head]] + path[queue[head]][i];
 			}
@@ -76,6 +78,7 @@ int main()
 	{
 		printf("%d ", check[i]);
 	}
+	printf("\n");
 	
 	return 0;
 

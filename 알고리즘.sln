@@ -159,6 +159,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5427_불", "5427_불\5427_�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1085_직사각형에서 탈출", "1085_직사각형에서 탈출\1085_직사각형에서 탈출.vcxproj", "{70121040-C4CF-4B6B-9075-37431886FE05}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2669_직사각형 네개의 합집합의 면적 구하기", "2669_직사각형 네개의 합집합의 면적 구하기\2669_직사각형 네개의 합집합의 면적 구하기.vcxproj", "{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2659_십자카드 문제", "2659_십자카드 문제\2659_십자카드 문제.vcxproj", "{707BC2EA-9F5B-4282-9E55-35E8617BCF24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -791,6 +795,22 @@ Global
 		{70121040-C4CF-4B6B-9075-37431886FE05}.Release|x64.Build.0 = Release|x64
 		{70121040-C4CF-4B6B-9075-37431886FE05}.Release|x86.ActiveCfg = Release|Win32
 		{70121040-C4CF-4B6B-9075-37431886FE05}.Release|x86.Build.0 = Release|Win32
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Debug|x64.ActiveCfg = Debug|x64
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Debug|x64.Build.0 = Debug|x64
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Debug|x86.ActiveCfg = Debug|Win32
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Debug|x86.Build.0 = Debug|Win32
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Release|x64.ActiveCfg = Release|x64
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Release|x64.Build.0 = Release|x64
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Release|x86.ActiveCfg = Release|Win32
+		{E3659BC3-FD2D-4ED2-9936-9695FBCA2AF2}.Release|x86.Build.0 = Release|Win32
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Debug|x64.ActiveCfg = Debug|x64
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Debug|x64.Build.0 = Debug|x64
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Debug|x86.ActiveCfg = Debug|Win32
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Debug|x86.Build.0 = Debug|Win32
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Release|x64.ActiveCfg = Release|x64
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Release|x64.Build.0 = Release|x64
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Release|x86.ActiveCfg = Release|Win32
+		{707BC2EA-9F5B-4282-9E55-35E8617BCF24}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
