@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{02C067AD-D576-45BD-BFC5-6B9D96AF1A78}</ProjectGuid>
+    <ProjectGuid>{2CC5463A-1E12-42A9-85FD-484064EA4B25}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My1992_쿼드트리</RootNamespace>
+    <RootNamespace>My1922_네트워크연결</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="re_main.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,16 +1,109 @@
 #include <stdio.h>
 #include <string.h>
 
-int path[801][801];
-int check[801];
-int queue[801] = { 0 };
+int path[1000][1000];
+int visit[10000];
+int dist[10000];
+int check[10000];
+int queue[10000];
 
 int N, E;
 int fisrt, second;
-int min = 999999;
-int head = 0, tail = 0;
 int find = 0;
 
+void findpath(int vertex)
+{
+	int i;
+	int head, tail;
+	head = 0;
+	tail = 0;
+
+	//memset(check, 0x1f, sizeof(check));
+	memset(queue, 0, sizeof(queue));
+
+	for (i = 1; i <= N; i++)
+	{
+		check[i] == 9999;
+	}
+
+	check[vertex] = 0;
+
+	//printf("%d", check[0]);
+
+	for (i = 1; i <= N; i++)
+	{
+		if (path[vertex][i] > 0)
+		{
+			queue[tail] = i;
+			tail++;
+			check[i] = path[vertex][i];
+		}
+	}
+
+	while (1)
+	{
+		if (head == tail) break;
+
+		for (i = 1; i <= N; i++)
+		{
+			if (path[queue[head]][i] > 0)
+			{
+				if (check[i] == 9999)
+				{
+					queue[tail] = i;
+					tail++;
+				}
+
+				if (check[i] > check[queue[head]] + path[queue[head]][i])
+					check[i] = check[queue[head]] + path[queue[head]][i];
+			}
+		}
+		head++;
+	}
+
+}
+
+/*
+void dikstra(int vertex)
+{
+	
+	memset(visit, 0, sizeof(visit));
+
+	int min = 999999;
+	int temp;
+	int i, j;
+
+	for (i = 1; i <= N; i++)
+	{
+		dist[i] = 9999;
+	}
+
+	dist[vertex] = 0;
+	for (i = 1; i <= N; i++)
+	{
+		min = 999999;
+		for (j = 1; j <= N; j++)
+		{
+			if (min > dist[j] && visit[j] == 0)
+			{
+				min = dist[j];
+				temp = j;
+			}
+		}
+
+		visit[temp] = 1;
+
+		for (j = 1; j <= N; j++)
+		{
+			if (dist[j] > dist[temp] + path[temp][j] && path[temp][j] != 0)
+			{
+				dist[j] = dist[temp] + path[temp][j];
+			}
+		}
+	}
+
+}
+*/
 int main()
 {
 	int i, j;
@@ -26,60 +119,36 @@ int main()
 
 	scanf("%d %d", &fisrt, &second);
 
-	
-	for (i = 1; i <= N; i++)
+	int sum1 = 0;
+	int sum2 = 0;
+
+	findpath(1);
+	sum1 += check[fisrt];
+	sum2 += check[second];
+
+	findpath(fisrt);
+	sum1 += check[second];
+	sum2 += check[N];
+
+	findpath(second);
+	sum1 += check[N];
+	sum2 += check[fisrt];
+
+	if (sum1 >= 9999 && sum2 >= 9999)
 	{
-	for (j = 1; j <= N; j++)
-	{
-	printf("%d ", path[i][j]);
-	}
-	printf("\n");
-	}
-	
-
-	memset(check, 0x1f, sizeof(check));
-
-	check[1] = 0;
-
-	//printf("%d", check[0]);
-
-	for (i = 2; i < N; i++)
-	{
-		if (path[1][i] > 0)
-		{
-			queue[tail] = i;
-			tail++;
-			check[i] = path[1][i];
-		}
+		printf("-1\n");
+		return 0;
 	}
 
-	while (1)
+	if (sum1 > sum2)
 	{
-		if (head == tail) break;
-
-		for (i = 1; i <= N; i++)
-		{
-			if(path[queue[head]][i] > 0)
-			{ 
-				if (check[i] == 0x1f)
-				{
-					queue[tail] = i;
-					tail++;
-				}
-
-				if (check[i] > check[queue[head]] + path[queue[head]][i])
-					check[i] = check[queue[head]] + path[queue[head]][i];
-			}
-		}
-		head++;
+		printf("%d\n", sum2);
+	}
+	else
+	{
+		printf("%d\n", sum1);
 	}
 
-	for (i = 1; i <= N; i++)
-	{
-		printf("%d ", check[i]);
-	}
-	printf("\n");
-	
 	return 0;
 
 }
