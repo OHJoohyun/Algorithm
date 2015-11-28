@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{217BDCDD-4E04-4902-AB29-17FF7D5C6FA6}</ProjectGuid>
+    <ProjectGuid>{785F031B-4BD1-4D5F-82FB-4BDF1AB87DA9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My2178_미로탐색</RootNamespace>
+    <RootNamespace>My1173_운동</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main_dfs.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

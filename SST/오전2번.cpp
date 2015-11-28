@@ -25,6 +25,8 @@ int bfs(int red_row, int red_col, int blue_row, int blue_col)
 {
 	int i, head, tail;
 	int r_row_t, r_col_t, b_row_t, b_col_t;
+	int res = 999999;
+	
 	head = 0;
 	tail = 0;
 
@@ -48,23 +50,26 @@ int bfs(int red_row, int red_col, int blue_row, int blue_col)
 			b_col_t = point[head].blue_col + Dx[i];
 			if(map[r_row_t][r_col_t] == 2 && map[b_row_t][b_col_t] != 2)
 			{
+				//printf("µé¾î¿È!\n");
 				point[tail].red_row = r_row_t;
 				point[tail].red_col = r_col_t;
 				point[tail].blue_row = b_row_t;
 				point[tail].blue_col = b_col_t;
 				point[tail].red_count = point[head].red_count + 1;
 				point[tail].blue_count = point[head].blue_count + 1;
-				return point[tail].red_count;
+				if (res > point[tail].red_count)
+					res = point[tail].red_count;
+				//return point[tail].red_count;
 			}
 			if (map[r_row_t][r_col_t] == 2 && map[b_row_t][b_col_t] == 2)
 			{
-				return -1;
+				//return -1;
 			}
 			if (r_row_t == b_row_t && r_col_t == b_col_t)
 			{
-				return -1;
+				//return -1;
 			}
-			if (map[r_row_t][r_col_t] == 0 && map[b_row_t][b_col_t] == 0)
+			if (map[r_row_t][r_col_t] != 1 && map[b_row_t][b_col_t] != 1)
 			{
 				point[tail].red_row = r_row_t;
 				point[tail].red_col = r_col_t;
@@ -74,7 +79,7 @@ int bfs(int red_row, int red_col, int blue_row, int blue_col)
 				point[tail].blue_count = point[head].blue_count + 1;
 				tail++;
 			}
-			if (map[r_row_t][r_col_t] == 0 && map[b_row_t][b_col_t] != 0)
+			if (map[r_row_t][r_col_t] != 1 && map[b_row_t][b_col_t] == 1)
 			{
 				point[tail].red_row = r_row_t;
 				point[tail].red_col = r_col_t;
@@ -84,10 +89,20 @@ int bfs(int red_row, int red_col, int blue_row, int blue_col)
 				point[tail].blue_count = point[head].blue_count;
 				tail++;
 			}
+			if (map[r_row_t][r_col_t] == 1 && map[b_row_t][b_col_t] != 1)
+			{
+				point[tail].red_row = point[head].red_row;
+				point[tail].red_col = point[head].red_col;
+				point[tail].blue_row = b_row_t;
+				point[tail].blue_col = b_col_t;
+				point[tail].red_count = point[head].red_count;
+				point[tail].blue_count = point[head].blue_count + 1;
+				tail++;
+			}
 		}
 		head++;
 	}
-	return -1;
+	return res;
 }
 
 
@@ -156,12 +171,12 @@ int main()
 		for (j = 0; j < M; j++)
 		{
 			scanf("%d", &map[i][j]);
-			if (map[i][j] == 3)
+			if (map[i][j] == 4)
 			{
 				r_row = i;
 				r_col = j;
 			}
-			if (map[i][j] == 4)
+			if (map[i][j] == 3)
 			{
 				b_row = i;
 				b_col = j;
